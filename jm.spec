@@ -9,11 +9,6 @@ Version:	0.1.10
 Release:	2
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(es):	X11/Aplicaciones
-Group(pl):	X11/Aplikacje
-Group(pt_BR):	X11/Aplicações
-Group(pt):	X11/Aplicações
 Source0:	http://www.junglemonkey.net/src/%{name}-%{version}.tar.gz
 URL:		http://www.junglemonkey.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
