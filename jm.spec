@@ -1,18 +1,21 @@
 #
 # Conditional build:
-#
 # _without_gnome   		- without gnome support
-
-Summary:	Jungle Monkey
+#
+Summary:	Jungle Monkey - distributed file sharing
+Summary(pl):	Jungle Monkey - program do dzielenia zasobów
 Name:		jm
 Version:	0.1.10
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
+Group(es):	X11/Aplicaciones
 Group(pl):	X11/Aplikacje
+Group(pt_BR):	X11/Aplicações
+Group(pt):	X11/Aplicações
 Source0:	http://www.junglemonkey.net/src/%{name}-%{version}.tar.gz
-URL:		http://www.junglemonkey.net
+URL:		http://www.junglemonkey.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	gnet-devel >= 1.1.0
 BuildRequires:	gtk+-devel >= 1.2.7
@@ -55,6 +58,13 @@ jm-announce Announcements about Jungle Monkey jm Discussion of Jungle
 Monkey for JM users jm-dev Discussion of Jungle Monkey for JM
 developers
 
+%description -l pl
+Jungle Monkey (JM) to program do rozproszonego dzielenia zasobów.
+Mo¿esz do³±czyæ siê do kana³u gdzie ludzie oferuj± pliki do
+¶ci±gniêcia, mo¿esz zaoferowaæ swoje pliki, a tak¿e tworzyæ w³asne
+kana³y. Kiedy ¶ci±gniêsz plik, inni mog± po³±czyæ siê do ciebie ¿eby
+¶ci±gn±æ ten plik. Mo¿esz tak¿e szukaæ plików. To jest wersja BETA.
+
 %prep
 %setup -q
 
@@ -68,8 +78,8 @@ developers
 	--with-gnu-ld
 %else
    CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure \
-	%{!?_without_gnome:	--enable-gnome=yes} \
-	%{?_without_gnome:	--enable-gnome=no} \
+	%{!?_without_gnome:--enable-gnome=yes} \
+	%{?_without_gnome:--enable-gnome=no} \
 	--prefix=%{_prefix} \
 	--enable-debug=yes \
 	--with-gnu-ld 
@@ -80,16 +90,14 @@ developers
 rm -rf $RPM_BUILD_ROOT
 %{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
 
-%post
-
-%postun
+gzip -9nf README ChangeLog NEWS TODO AUTHORS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README COPYING ChangeLog NEWS TODO AUTHORS INSTALL 
+%doc {README,ChangeLog,NEWS,TODO,AUTHORS}.gz
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/*
 %{_mandir}/man1/*
