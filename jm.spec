@@ -1,15 +1,12 @@
-# Note that this is NOT a relocatable package
-%define ver      @VERSION@
-%define rel      1
-%define prefix   /usr
-
 Summary:	Jungle Monkey (Gnome version)
 Name:		jm-gnome
-Version:	%ver
-Release:	%rel
+Version:	@VERSION@
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	jm-gnome-%{PACKAGE_VERSION}.tar.gz
+Group(de):	X11/Applikationen
+Group(pl):	X11/Aplikacje
+Source0:	%{name}-%{PACKAGE_VERSION}.tar.gz
 URL:		http://www.eecs.umich.edu/~dhelder/misc/jm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Conflicts:	jm
@@ -53,13 +50,13 @@ developers
 
 %build
 %ifarch alpha
-   CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" ./configure --enable-gnome --host=alpha-redhat-linux\
+   CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure --enable-gnome --host=alpha-redhat-linux\
 	--prefix=%{_prefix} \
 	--enable-debug=yes \
 	--with-gnu-ld
 %else
-   CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" ./configure --enable-gnome \
-	--prefix=%{prefix} \
+   CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure --enable-gnome \
+	--prefix=%{_prefix} \
 	--enable-debug=yes \
 	--with-gnu-ld 
 %endif
@@ -73,12 +70,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 
-#%clean
-#rm -rf $RPM_BUILD_ROOT
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-
 %doc README COPYING ChangeLog NEWS TODO AUTHORS INSTALL 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/*
