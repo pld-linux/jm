@@ -10,6 +10,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.junglemonkey.net/src/%{name}-%{version}.tar.gz
+# Source0-md5:	3b0c8a899d518c0cfed30e26426e4972
 URL:		http://www.junglemonkey.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	gnet-devel >= 1.1.0
