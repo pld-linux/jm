@@ -12,16 +12,15 @@ Group:		X11/Applications
 Source0:	http://www.junglemonkey.net/src/%{name}-%{version}.tar.gz
 # Source0-md5:	3b0c8a899d518c0cfed30e26426e4972
 URL:		http://www.junglemonkey.net/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	gnet-devel >= 1.1.0
+%{!?_without_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
-%{!?_without_gnome:BuildRequires:	gnome-libs-devel}
-Obsoletes:	jm-gnome
 Requires:	glib >= 1.2
 Requires:	gnet >= 1.0.1
-
+Obsoletes:	jm-gnome
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Jungle Monkey (JM) is a distributed file sharing program. You join
@@ -82,7 +81,9 @@ kana³y. Kiedy ¶ci±gniêsz plik, inni mog± po³±czyæ siê do ciebie ¿eby
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
+
+%{__make} install \
+	prefix=$RPM_BUILD_ROOT%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
