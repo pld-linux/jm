@@ -21,8 +21,6 @@ Obsoletes:	jm-gnome
 Requires:	glib >= 1.2
 Requires:	gnet >= 1.0.1
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Jungle Monkey (JM) is a distributed file sharing program. You join
