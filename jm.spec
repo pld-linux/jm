@@ -77,7 +77,7 @@ kana³y. Kiedy ¶ci±gniêsz plik, inni mog± po³±czyæ siê do ciebie ¿eby
 	%{?_without_gnome:--enable-gnome=no} \
 	--prefix=%{_prefix} \
 	--enable-debug=yes \
-	--with-gnu-ld 
+	--with-gnu-ld
 %endif
 %{__make}
 
