@@ -1,15 +1,25 @@
-Summary:	Jungle Monkey (Gnome version)
-Name:		jm-gnome
-Version:	@VERSION@
+#
+# Conditional build:
+#
+# _without_gnome   		- without gnome support
+
+Summary:	Jungle Monkey
+Name:		jm
+Version:	0.1.10
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
-Source0:	http://www.junglemonkey.net/src/%{name}-%{PACKAGE_VERSION}.tar.gz
+Source0:	http://www.junglemonkey.net/src/%{name}-%{version}.tar.gz
 URL:		http://www.junglemonkey.net
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Conflicts:	jm
+BuildRequires:	gnet-devel >= 1.1.0
+BuildRequires:	gtk+-devel >= 1.2.7
+BuildRequires:	libglade-devel
+BuildRequires:	libxml-devel
+%{!?_without_gnome:BuildRequires:	gnome-libs-devel}
+Obsoletes:	jm-gnome
 Requires:	glib >= 1.2
 Requires:	gnet >= 1.0.1
 
@@ -50,12 +60,16 @@ developers
 
 %build
 %ifarch alpha
-   CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure --enable-gnome --host=alpha-redhat-linux\
+   CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure --host=alpha-redhat-linux\
+	%{!?_without_gnome:	--enable-gnome=yes} \
+	%{?_without_gnome:	--enable-gnome=no} \
 	--prefix=%{_prefix} \
 	--enable-debug=yes \
 	--with-gnu-ld
 %else
-   CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure --enable-gnome \
+   CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" ./configure \
+	%{!?_without_gnome:	--enable-gnome=yes} \
+	%{?_without_gnome:	--enable-gnome=no} \
 	--prefix=%{_prefix} \
 	--enable-debug=yes \
 	--with-gnu-ld 
