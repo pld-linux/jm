@@ -6,8 +6,8 @@ License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
-Source0:	%{name}-%{PACKAGE_VERSION}.tar.gz
-URL:		http://www.eecs.umich.edu/~dhelder/misc/jm
+Source0:	http://www.junglemonkey.net/src/%{name}-%{PACKAGE_VERSION}.tar.gz
+URL:		http://www.junglemonkey.net
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Conflicts:	jm
 Requires:	glib >= 1.2
