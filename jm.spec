@@ -19,7 +19,7 @@ BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	libglade-devel
 %{!?_without_gnome:BuildRequires:	libglade-gnome-devel}
 BuildRequires:	libxml-devel
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7d
 Requires:	glib >= 1.2
 Requires:	gnet >= 1.1.0
 Obsoletes:	jm-gnome
