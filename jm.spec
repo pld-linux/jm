@@ -11,7 +11,7 @@ Copyright: GPL
 Group: X11/Application
 Source0:   jm-gnome-%{PACKAGE_VERSION}.tar.gz
 URL:       http://www.eecs.umich.edu/~dhelder/misc/jm
-BuildRoot: /var/tmp/jm-gnome-%{PACKAGE_VERSION}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Docdir: %{prefix}/doc
 Packager: Xavier Nicolovici <nicolovi@club-internet.fr>
 Conflicts: jm
@@ -47,7 +47,6 @@ You can join the Jungle Monkey mailing lists by sending an email to
         jm-announce     Announcements about Jungle Monkey
         jm              Discussion of Jungle Monkey for JM users
         jm-dev          Discussion of Jungle Monkey for JM developers
-
 
 %prep
 %setup
