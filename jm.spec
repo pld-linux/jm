@@ -64,7 +64,7 @@ developers
 	--enable-debug=yes \
 	--with-gnu-ld 
 %endif
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
