@@ -8,8 +8,7 @@ Name:		jm-gnome
 Version:	%ver
 Release:	%rel
 License:	GPL
-Group:		X11/Application
-######		Unknown group!
+Group:		X11/Applications
 Source0:	jm-gnome-%{PACKAGE_VERSION}.tar.gz
 URL:		http://www.eecs.umich.edu/~dhelder/misc/jm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
