@@ -85,14 +85,12 @@ kana³y. Kiedy ¶ci±gniêsz plik, inni mog± po³±czyæ siê do ciebie ¿eby
 rm -rf $RPM_BUILD_ROOT
 %{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
 
-gzip -9nf README ChangeLog NEWS TODO AUTHORS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,ChangeLog,NEWS,TODO,AUTHORS}.gz
+%doc README ChangeLog NEWS TODO AUTHORS
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/*
 %{_mandir}/man1/*
