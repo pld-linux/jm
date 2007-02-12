@@ -3,7 +3,7 @@
 # _without_gnome   		- without gnome support
 #
 Summary:	Jungle Monkey - distributed file sharing
-Summary(pl):	Jungle Monkey - program do dzielenia zasobów
+Summary(pl.UTF-8):   Jungle Monkey - program do dzielenia zasobÃ³w
 Name:		jm
 Version:	0.1.11
 Release:	1
@@ -35,15 +35,15 @@ files.
 THIS IS BETA SOFTWARE - JM IS MOSTLY STABLE, BUT THERE MAY STILL BE
 LINGERING BUGS.
 
-%description -l pl
-Jungle Monkey (JM) to program do rozproszonego dzielenia zasobów.
-Mo¿na do³±czyæ siê do kana³u gdzie ludzie oferuj± pliki do
-¶ci±gniêcia, mo¿na zaoferowaæ swoje pliki, a tak¿e tworzyæ w³asne
-kana³y. Kiedy ¶ci±gniemy plik, inni mog± po³±czyæ siê do nas, ¿eby
-¶ci±gn±æ ten plik. Mo¿na tak¿e szukaæ plików.
+%description -l pl.UTF-8
+Jungle Monkey (JM) to program do rozproszonego dzielenia zasobÃ³w.
+MoÅ¼na doÅ‚Ä…czyÄ‡ siÄ™ do kanaÅ‚u gdzie ludzie oferujÄ… pliki do
+Å›ciÄ…gniÄ™cia, moÅ¼na zaoferowaÄ‡ swoje pliki, a takÅ¼e tworzyÄ‡ wÅ‚asne
+kanaÅ‚y. Kiedy Å›ciÄ…gniemy plik, inni mogÄ… poÅ‚Ä…czyÄ‡ siÄ™ do nas, Å¼eby
+Å›ciÄ…gnÄ…Ä‡ ten plik. MoÅ¼na takÅ¼e szukaÄ‡ plikÃ³w.
 
-To jest oprogramowanie w wersji BETA - przewa¿nie dzia³a, ale mo¿e
-zawieraæ b³êdy.
+To jest oprogramowanie w wersji BETA - przewaÅ¼nie dziaÅ‚a, ale moÅ¼e
+zawieraÄ‡ bÅ‚Ä™dy.
 
 %prep
 %setup -q
