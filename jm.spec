@@ -3,7 +3,7 @@
 # _without_gnome   		- without gnome support
 #
 Summary:	Jungle Monkey - distributed file sharing
-Summary(pl.UTF-8):   Jungle Monkey - program do dzielenia zasobów
+Summary(pl.UTF-8):	Jungle Monkey - program do dzielenia zasobów
 Name:		jm
 Version:	0.1.11
 Release:	1
